@@ -62,11 +62,21 @@ $(function() {
            expect(body[0].className).toMatch('menu-hidden');
          });
 
-         /* TODO: Write a test that ensures the menu changes
+         /* Write a test that ensures the menu changes
           * visibility when the menu icon is clicked. This test
           * should have two expectations: does the menu display when
           * clicked and does it hide when clicked again.
           */
+          it('the menu changes visibility', function() {
+            var icon = document.querySelector('.menu-icon-link');
+            var body = document.getElementsByTagName('body');
+            //First click
+            icon.click();
+            expect(body[0].className).not.toMatch('menu-hidden')
+            //Second click
+            icon.click();
+            expect(body[0].className).toMatch('menu-hidden');
+          });
     });
     /* TODO: Write a new test suite named "Initial Entries" */
 

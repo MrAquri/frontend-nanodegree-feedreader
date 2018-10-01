@@ -23,7 +23,7 @@ $(function() {
          * and that the URL is not empty.
          */
         it('URLs are not empty', function() {
-            for (var i = 0; i < allFeeds.length; i++) {
+            for (let i = 0; i < allFeeds.length; i++) {
                 expect(allFeeds[i].url).toBeDefined();
                 expect(allFeeds[i].length).not.toBe(0);
             }
@@ -34,7 +34,7 @@ $(function() {
          * and that the name is not empty.
          */
         it('name is not empty', function() {
-            for (var i = 0; i < allFeeds.length; i++) {
+            for (let i = 0; i < allFeeds.length; i++) {
                 expect(allFeeds[i].name).toBeDefined();
                 expect(allFeeds[i].length).not.toBe(0);
             }
@@ -44,8 +44,8 @@ $(function() {
     describe('The menu', function() {
 
         //Declaring variables used in the suite
-        var icon = document.querySelector('.menu-icon-link');
-        var body = document.getElementsByTagName('body');
+        let icon = document.querySelector('.menu-icon-link');
+        let body = document.getElementsByTagName('body');
 
         /* Test that ensures the menu element is
          * hidden by default.
@@ -70,8 +70,8 @@ $(function() {
     describe('Initial Entries', function() {
 
         //Declaring variables used in the suite
-        var feed = document.querySelector('.feed');
-        var entry = document.getElementsByClassName('entry');
+        let feed = document.querySelector('.feed');
+        let entry = document.getElementsByClassName('entry');
 
         /* Test that ensures when the loadFeed
          * function is called and completes its work, there is at least
@@ -93,8 +93,8 @@ $(function() {
     describe('New Feed Selection', function() {
 
         //Declaring variables used in the suite
-        var feed = document.querySelector('.feed');
-        var oldFeed, newFeed;
+        let feed = document.querySelector('.feed');
+        let oldFeed, newFeed;
 
         beforeEach(function(done) {
             loadFeed(0);

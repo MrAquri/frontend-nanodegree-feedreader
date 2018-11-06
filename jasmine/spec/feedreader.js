@@ -86,7 +86,7 @@ $(function() {
         it('the feed container is not empty', function(done) {
             expect(feed).not.toBe(0);
             expect(entry).toBeDefined();
-            expect(entry).not.toBe(0);
+            expect(entry.length).not.toBe(0);
             done();
         });
     });

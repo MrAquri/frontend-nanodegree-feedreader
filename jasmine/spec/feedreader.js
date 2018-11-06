@@ -83,11 +83,10 @@ $(function() {
           });
         });
 
-        it('the feed container is not empty', function(done) {
+        it('the feed container is not empty', function() {
             expect(feed).not.toBe(0);
             expect(entry).toBeDefined();
             expect(entry.length).not.toBe(0);
-            done();
         });
     });
 

@@ -97,15 +97,13 @@ $(function() {
         let oldFeed, newFeed;
 
         beforeEach(function(done) {
-            loadFeed(0);
+          loadFeed(0, function() {
             oldFeed = feed.innerHTML;
-            done();
-        });
-        // Used for cleanup, after the beforeEach is used
-        afterEach(function(done) {
-            loadFeed(1);
-            newFeed = feed.innerHTML;
-            done();
+            loadFeed(1, function() {
+              newFeed = feed.innerHTML;
+              done();
+            });
+          });
         });
 
         /* Test that ensures when a new feed is loaded

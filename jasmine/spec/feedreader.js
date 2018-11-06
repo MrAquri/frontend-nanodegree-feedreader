@@ -70,7 +70,7 @@ $(function() {
     describe('Initial Entries', function() {
 
         //Declaring variables used in the suite
-        let feed = document.querySelector('.feed');
+        let feed = document.querySelectorAll('.feed');
         let entry = document.getElementsByClassName('entry');
 
         /* Test that ensures when the loadFeed

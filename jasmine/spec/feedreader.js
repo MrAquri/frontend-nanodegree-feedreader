@@ -51,7 +51,7 @@ $(function() {
          * hidden by default.
          */
         it('the menu is hidden', function() {
-            expect(body[0].className).toMatch('menu-hidden');
+            expect(body[0].className).toContain('menu-hidden');
         });
 
         /* Test that ensures the menu changes
@@ -60,10 +60,10 @@ $(function() {
         it('the menu changes visibility', function() {
             //First click
             icon.click();
-            expect(body[0].className).not.toMatch('menu-hidden')
+            expect(body[0].className).not.toContain('menu-hidden');
             //Second click
             icon.click();
-            expect(body[0].className).toMatch('menu-hidden');
+            expect(body[0].className).toContain('menu-hidden');
         });
     });
 

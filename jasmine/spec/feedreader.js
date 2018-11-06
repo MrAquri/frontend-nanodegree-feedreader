@@ -70,8 +70,7 @@ $(function() {
     describe('Initial Entries', function() {
 
         //Declaring variables used in the suite
-        let feed = document.querySelectorAll('.feed');
-        let entry = document.getElementsByClassName('entry');
+        let feed = querySelectorAll('.feed .entry')
 
         /* Test that ensures when the loadFeed
          * function is called and completes its work, there is at least
@@ -85,8 +84,8 @@ $(function() {
 
         it('the feed container is not empty', function() {
             expect(feed).not.toBe(0);
-            expect(entry).toBeDefined();
-            expect(entry.length).not.toBe(0);
+            expect(feed).toBeDefined();
+            expect(feed.length).not.toBe(0);
         });
     });
 

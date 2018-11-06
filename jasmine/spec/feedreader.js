@@ -78,8 +78,9 @@ $(function() {
          * a single .entry element within the .feed container.
          */
         beforeEach(function(done) {
-            loadFeed(0);
+          loadFeed(0, function() {
             done();
+          });
         });
 
         it('the feed container is not empty', function(done) {

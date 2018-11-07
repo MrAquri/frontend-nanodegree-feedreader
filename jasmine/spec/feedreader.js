@@ -60,7 +60,7 @@ $(function() {
         it('the menu changes visibility', function() {
             //First click
             icon.click();
-            expect(body[0].classList.contains('menu-hidden')).toBe(true);
+            expect(body[0].classList.contains('menu-hidden')).not.toBe(true);
             //Second click
             icon.click();
             expect(body[0].classList.contains('menu-hidden')).toBe(true);
@@ -68,9 +68,6 @@ $(function() {
     });
 
     describe('Initial Entries', function() {
-
-        //Declaring variables used in the suite
-        let feed = querySelectorAll('.feed .entry')
 
         /* Test that ensures when the loadFeed
          * function is called and completes its work, there is at least
@@ -82,26 +79,29 @@ $(function() {
           });
         });
 
-        it('the feed container is not empty', function() {
+        it('the feed container is not empty', function(done) {
+          //Declaring variables used in the suite
+          let feed = document.querySelectorAll('.feed .entry');
             expect(feed).not.toBe(0);
             expect(feed).toBeDefined();
             expect(feed.length).not.toBe(0);
+            done();
         });
     });
 
     describe('New Feed Selection', function() {
 
         //Declaring variables used in the suite
-        let feed = document.querySelector('.feed');
         let oldFeed, newFeed;
 
         beforeEach(function(done) {
           loadFeed(0, function() {
+            let feed = document.querySelector('.feed');
             oldFeed = feed.innerHTML;
-            loadFeed(1, function() {
-              newFeed = feed.innerHTML;
-              done();
-            });
+              loadFeed(1, function() {
+                newFeed = feed.innerHTML;
+                done();
+              });
           });
         });
 
